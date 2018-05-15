@@ -1,2 +1,12 @@
-<h1>Number#index</h1>
-<p>Find me in app/views/number/index.html.erb</p>
+<%= form_tag(number_index_path, :method => 'post') do %>
+  <p>
+    Numarayı gir
+    <br/>
+    <%= number_field_tag "no", max: 4  %>
+  </p>
+  <p>
+    <%= submit_tag "Submit", class: "button" %>
+  </p>
+<% end %>
+
+<%= @no %>
