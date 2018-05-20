@@ -2,11 +2,21 @@
   <p>
     Numarayı gir
     <br/>
-    <%= number_field_tag "no", max: 4  %>
+    <%= number_field_tag "no" %>
   </p>
   <p>
     <%= submit_tag "Submit", class: "button" %>
   </p>
 <% end %>
 
-<%= @no %>
+
+<% if flash[:error] %>
+  <h1 class="error"><%= flash[:error] %></h1>
+<% end %>
+
+<% if flash[:notice] %>
+  <h1 class="error"><%= flash[:notice] %></h1>
+<% end %>
+
+
+<%= @nos %>
