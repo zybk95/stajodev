@@ -31,6 +31,8 @@ class NumberController < ApplicationController
 
     if array.length < 4 || array.length > 4
       flash.now[:notice] = ""
+    elsif sayi > 3999
+      flash.now[:notice] = "+90 850 88 #{sayiyaz} Bu numara mevcut değildir"
     elsif array[0] == array [1] && array[0] == array [2] && array[0] == array[3]
       flash.now[:notice] = "+90 850 885 #{sayiyaz} numarası özel bir numaradır. Fiyatı: ₺1000 + KDV"
     elsif array[1] == array [2] && array[2] == array[3]
