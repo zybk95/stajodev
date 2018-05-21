@@ -1,21 +1,37 @@
-<%= form_tag(number_index_path, :method => 'post') do %>
-  <p>
-    Numarayı gir
-    <br/>
-    <%= number_field_tag "no" %>
+
+
+
+<div class="container">
+  <div class="row">
+  </br></br></br></br></br></br></br>
+  <p style="font-size: 20px;  text-align:center">
+    Almak istediğiniz şirket numarasını aşağıya girerek fiyat kontrolü yapabilirsiniz.
   </p>
-  <p>
-    <%= submit_tag "Submit", class: "button" %>
-  </p>
-<% end %>
+  </div>
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6" style="text-align:center">
+      <%= form_tag(number_index_path, :method => 'post') do %>
+      <p>
+        <h4> +90 850 885 <%= number_field_tag "no" %> </h4>
+        <%= submit_tag "Numara kontolü yap", class: "button" %>
+      </p>
+      <% end %>
 
+  </div>
+    <div class="col-md-3"></div>
+  </div>
+  <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8" style="text-align:center">
+        <% if flash[:error] %>
+        <h4 class="error"  style="color: #f24141"><%= flash[:error] %></h4>
+        <% end %>
 
-<% if flash[:error] %>
-  <h1 class="error"><%= flash[:error] %></h1>
-<% end %>
-
-<% if flash[:notice] %>
-  <h1 class="error"><%= flash[:notice] %></h1>
-<% end %>
-
-<%= @nos %>
+        <% if flash[:notice] %>
+        <h1 class="error"><%= flash[:notice] %></h1>
+        <% end %>
+      </div>
+      <div class="col-md-2"></div>
+  </div>
+</div>
